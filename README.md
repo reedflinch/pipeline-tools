@@ -1,4 +1,4 @@
-* Why Immutable Infrastructure?
+# Why Immutable Infrastructure?
 
 In an effort to leave behind the days of the monolithic application that evoked nightmares by developers and system administrators charged with maintiaing it, USCIS has made the forward-looking decision to "reboot the infrastructure."  To do this, we lean on the principle of **immutable infrastructure**.  
 
@@ -9,7 +9,7 @@ The core goal of immutable infrastructure is speed:  speed in reacting to change
 
 > It’s giving us the confidence we need to rapidly iterate on our backend infrastructure as we continue to make things faster, more scalable and dependable for our customers and flexible to move our applications forward more freely.
 
-** Why Docker?
+## Why Docker?
 
 Simply put, Docker allows development teams to experiment and innovate in a fast, lightweight, consistent and secure manner.  To demonstrate this concept, take a look at how Docker allows teams to utilize immutable infrastructure.
 
