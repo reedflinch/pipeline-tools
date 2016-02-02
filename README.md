@@ -9,19 +9,28 @@ The core goal of immutable infrastructure is speed:  speed in reacting to change
 
 > It’s giving us the confidence we need to rapidly iterate on our backend infrastructure as we continue to make things faster, more scalable and dependable for our customers and flexible to move our applications forward more freely.
 
-## Why Docker?
+## Why [Docker](https://www.docker.com/)?
 
 Simply put, Docker allows development teams to experiment and innovate in a fast, lightweight, consistent and secure manner.  To demonstrate this concept, take a look at how Docker allows teams to utilize immutable infrastructure.
 
 Understanding Docker begins at the **container** level.  A container is a lot like a Linux virtual machine, [except that it's not](http://www.informationweek.com/strategic-cio/it-strategy/containers-explained-9-essentials-you-need-to-know/a/d-id/1318961).  Where a virtual machine requires its own guest operating system, storage, CPU, and RAM, a Docker container shares the kernel of its host machine.  This means no large, often wasteful operating system needs to be tied to each container.  Containers are generally much smaller than their virtual machine counterparts -- sometimes [micro-sized, in fact](http://www.iron.io/blog/2016/01/microcontainers-tiny-portable-containers.html) (a fully working hello-world web application container written in Node.js can be as small as 5MB).
 
-A container generally runs a single process or serves a single function -- an application "server", a database, a load balancer, or a continuous integration tool, for example.  De-coupling these application components allows teams to scale efficiently and handle infrastructure failures gracefully.  Isolating resources means that processes running in one container cannot "see" or affect the processes in another container.  Consequently, each container can be designed to run the most efficient solution for the task at hand, and no more -- which, by eliminating as much extraneous fluff as possible, provides fewer attack vectors for potential threats.
+A container generally runs a single process or serves a single function -- an application "server", a database, a load balancer, or a continuous integration tool, for example.  De-coupling these application components allows teams to scale efficiently and handle infrastructure failures gracefully.  As part of a Continuous Integration/Continuous Delivery pipeline, this means that containers and host machines can all be provisioned and clustered easily and automatically.
 
-The security and immutability aspects of Docker are where **images** shine.  [An image is](http://stackoverflow.com/questions/23735149/docker-image-vs-container/26960888#26960888) a snapshot of a container that is inert, or immutable.  It is the foundation of each container, composed of layers of other images, which describe the features and commands to be implemented for the containers built upon it.  By beginning with a lightweight, secure, and consistent image, [such as CoreOS](https://coreos.com/) for example, images can be designed for very specific and logical purposes.  By [hardening](http://linux-audit.com/docker-security-best-practices-for-your-vessel-and-containers/), or reducing the surface of vulnerability, Docker images and containers can be made even more secure.  In fact, image hardening research and experimentation is already happening at USCIS.
+Isolating resources means that processes running in one container cannot "see" or affect the processes in another container.  Consequently, each container can be designed to run the most efficient solution for the task at hand, and no more -- which, by eliminating as much extraneous fluff as possible, provides fewer attack vectors for potential threats.
 
-## Why Gradle?
+The security and immutability aspects of Docker are where **images** shine.  [An image is](http://stackoverflow.com/questions/23735149/docker-image-vs-container/26960888#26960888) a snapshot of a container that is inert, or immutable.  It is the foundation of each container, composed of layers of other images, which describe the features and commands to be implemented for the containers built upon it.  By beginning with a lightweight, secure, and consistent image, such as [CoreOS for example](https://coreos.com/), images can be designed for very specific and logical purposes.  By [hardening](http://linux-audit.com/docker-security-best-practices-for-your-vessel-and-containers/), or reducing the surface of vulnerability, Docker images and containers can be made even more secure.  In fact, image hardening research and experimentation is already happening at USCIS.
+
+## Why [Gradle](http://gradle.org/)?
+
+Gradle is a [self-described](https://github.com/gradle/gradle) build tool with a focus on build automation and support for multi-language development.  The open source software supports the entire development lifecycle, from code compile to deploy, and integrates with almost every tool imaginable in a DevOps workflow.  Gradle fills an important development need by serving as a general puprose aggregate compiler (compiler, source sets, and dependencies) that also supports native code, uniting the compiler, assembler, and linker.
+
+Gradle implements the best of both Apache's Ant and Maven build tools.  Using a Groovy-based domain-specific language for project configuration eases the headaches commonly found in Maven's XML configuration files.  
+
+Most importantly, Gradle can scale intelligently.  It was designed for large, multi-project builds in an enterprise environment, and is used by technology powerhouses such as Netflix, LinkedIn and Twitter.  Incremental builds are supported, with Gradle determining which parts of a project are up-to-date, reducing redundant tasks.
+
+## Why [Jenkins](https://jenkins-ci.org/)?
 
 
 
-## Why Jenkins?
 
