@@ -17,7 +17,7 @@ Understanding Docker begins at the **container** level.  A container is a lot li
 
 A container generally runs a single process or serves a single function -- an application "server", a database, a load balancer, or a continuous integration tool, for example.  De-coupling these application components allows teams to scale efficiently and handle infrastructure failures gracefully.  Isolating resources means that processes running in one container cannot "see" or affect the processes in another container.  Consequently, each container can be designed to run the most efficient solution for the task at hand, and no more -- which, by eliminating as much extraneous fluff as possible, provides fewer attack vectors for potential threats.
 
-
+The security and immutability aspects of Docker are where **images** shine.  [An image is](http://stackoverflow.com/questions/23735149/docker-image-vs-container/26960888#26960888) a snapshot of a container that is inert, or immutable.  It is the foundation of each container, composed of layers of other images, which describe the features and commands to be implemented for the containers built upon it.  By beginning with a lightweight, secure, and consistent image, [such as CoreOS](https://coreos.com/) for example, images can be designed for very specific and logical purposes.  By [hardening](http://linux-audit.com/docker-security-best-practices-for-your-vessel-and-containers/), or reducing the surface of vulnerability, Docker images and containers can be made even more secure.  In fact, image hardening research and experimentation is already happening at USCIS.
 
 ## Why Gradle?
 
