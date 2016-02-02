@@ -15,7 +15,7 @@ Simply put, Docker allows development teams to experiment and innovate in a fast
 
 Understanding Docker begins at the **container** level.  A container is a lot like a Linux virtual machine, [except that it's not](http://www.informationweek.com/strategic-cio/it-strategy/containers-explained-9-essentials-you-need-to-know/a/d-id/1318961).  Where a virtual machine requires its own guest operating system, storage, CPU, and RAM, a Docker container shares the kernel of its host machine.  This means no large, often wasteful operating system needs to be tied to each container.  Containers are generally much smaller than their virtual machine counterparts -- sometimes [micro-sized, in fact](http://www.iron.io/blog/2016/01/microcontainers-tiny-portable-containers.html) (a fully working hello-world web application container written in Node.js can be as small as 5MB).
 
-A container generally runs a single process or serves a single function -- an application "server", a database, a load balancer, or a continuous integration tool, for example.  De-coupling these application components allows teams to scale efficiently and handle infrastructure failures gracefully.  As part of a Continuous Integration/Continuous Delivery pipeline, this means that containers and host machines can all be provisioned and clustered easily and automatically.
+A container generally runs a single process or serves a single function -- an application "server", a database, a load balancer, or a continuous integration tool, for example.  De-coupling these application components allows teams to scale efficiently and handle infrastructure failures gracefully.  As part of a Continuous Integration/Continuous Delivery (CI/CD) pipeline, this means that containers and host machines can all be provisioned and clustered easily and automatically.
 
 Isolating resources means that processes running in one container cannot "see" or affect the processes in another container.  Consequently, each container can be designed to run the most efficient solution for the task at hand, and no more -- which, by eliminating as much extraneous fluff as possible, provides fewer attack vectors for potential threats.
 
@@ -23,14 +23,17 @@ The security and immutability aspects of Docker are where **images** shine.  [An
 
 ## Why [Gradle](http://gradle.org/)?
 
-Gradle is a [self-described](https://github.com/gradle/gradle) build tool with a focus on build automation and support for multi-language development.  The open source software supports the entire development lifecycle, from code compile to deploy, and integrates with almost every tool imaginable in a DevOps workflow.  Gradle fills an important development need by serving as a general puprose aggregate compiler (compiler, source sets, and dependencies) that also supports native code, uniting the compiler, assembler, and linker.
+Gradle is a [self-described](https://github.com/gradle/gradle) flexible and powerful build tool with a focus on build automation and support for multi-language development.  The open source software supports the entire development lifecycle, from code compile to deploy, and integrates with almost every tool imaginable in a DevOps workflow.  Gradle fills an important development need by serving as a general puprose aggregate compiler (compiler, source sets, and dependencies) that also supports native code, uniting the compiler, assembler, and linker.
 
 Gradle implements the best of both Apache's Ant and Maven build tools.  Using a Groovy-based domain-specific language for project configuration eases the headaches commonly found in Maven's XML configuration files.  
 
-Most importantly, Gradle can scale intelligently.  It was designed for large, multi-project builds in an enterprise environment, and is used by technology powerhouses such as Netflix, LinkedIn and Twitter.  Incremental builds are supported, with Gradle determining which parts of a project are up-to-date, reducing redundant tasks.
+Most importantly, Gradle can scale intelligently.  It was designed for large, multi-project builds in an enterprise environment, and is used by technology powerhouses such as Netflix, LinkedIn and Twitter.  Incremental builds are supported, with Gradle determining which parts of a project are up-to-date, reducing redundant tasks.  At USCIS, using Gradle means a commitment to consistency and automation in the deployment process.
 
 ## Why [Jenkins](https://jenkins-ci.org/)?
 
+Jenkins, at its core, makes it easier for developers to integrate changes into a software project.  The powerful orchestration and automation server has gained incredible traction in recent years, due to a combination of its ease of use, incredible integration support, and extensibility.  
 
+Jenkins is used to communicate with almost every service of the CI/CD pipeline.  From code commit in GitHub, to unit tests, integration tests, performance tests, security scanners, code coverage tools, to the application itself -- Jenkins orchestrates with them all, and can do so without any human intervention.  Jenkins can be configured to run a full suite of operations upon a commit to a GitHub repository and, in addition, even be triggered by a user entering a simple message in Slack.
 
+The most powerful effect of using Jenkins or other CI servers is the incredibly fast feedback loop.  With these tools, development teams are able to instantly know who and what introduced a failing change, and can react accordingly.  Once a successful change is committed and all tests pass, Jenkins has the ability to deploy the new build on immutable infrastructure, completing the development lifecycle.
 
